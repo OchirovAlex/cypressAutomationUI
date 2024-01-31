@@ -10,12 +10,16 @@ describe('textBox', () => {
         cy.get('#currentAddress').type('not permanent address');
         cy.get('#permanentAddress').type('permanent address');
         cy.get('#submit').click();
-        // cy.get('p#name').should('include','Jerry');
-        // cy.get('p#email').should('include','example');
-        // cy.get('p#currentAddress').should('include','not');
-        // cy.get('p#permanentAddress').should('include','permanent');
+        cy.get('#name').should('include.text','Jerry');
+        cy.get('#email').should('include.text','example');
+        cy.get('#currentAddress.mb-1').should('include.text','not');
+        cy.get('#permanentAddress.mb-1').should('include.text','permanent');
     })
     it('submit with PageObject', () => {
         TextBox.textBoxSubmit();
+        cy.get('#name').should('include.text','Jerry');
+        cy.get('#email').should('include.text','example');
+        cy.get('#currentAddress.mb-1').should('include.text','not');
+        cy.get('#permanentAddress.mb-1').should('include.text','permanent');
     })
 })
