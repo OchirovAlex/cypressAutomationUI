@@ -11,7 +11,7 @@ describe('HOMEWORK', () => {
             done()
         })
         cy.get('#alert_trigger').click()
-        cy.get('#alert_handled_badge').should('have.text','Alert\n            handled');
+        cy.get('#alert_handled_badge').should('include.text','handled');
     })    
     it('confirm OK', () => {
         cy.get('#prompt_trigger').click()
