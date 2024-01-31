@@ -22,7 +22,7 @@ describe('HOMEWORK', () => {
             return false;
         });
         cy.get('#prompt_trigger').click()
-        cy.get('#confirm_cancelled_badge').should('have.text','Cancelled');    
+        cy.get('#confirm_cancelled_badge').should('have.text','Cancelled').and('be.visible');    
     });
     it('Wait for element to be visible', () => {
         cy.get('.popover-header').should('not.exist');
