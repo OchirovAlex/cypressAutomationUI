@@ -4,12 +4,13 @@ describe("HOMEWORK", () => {
   beforeEach(() => {
     cy.visit(Cypress.env("homeWork"));
   });
-  it("alert", (done) => {
+  it.only("alert", (done) => {
     cy.on("window:alert", (text) => {
       expect(text).to.eq("I am alerting you!");
       done();
     });
     cy.get("#alert_trigger").click();
+//    cy.get("#alert_handled_badge").should("have.text", "Alert \n                                handled");
     cy.get("#alert_handled_badge").should("include.text", "handled");
   });
   it("confirm OK", (done) => {
@@ -48,6 +49,8 @@ describe("HOMEWORK", () => {
   it("Wait for element to be Invisible", () => {
     cy.get("#invisibility_target").should("be.visible");
     cy.get("#invisibility_trigger").contains("button", "Trigger").click();
+    cy.get(".spinner-border.spinner-border-sm.mr-2").should("be.visible");
+    cy.get("button.btn.btn-primary").should("include.text", "Waiting");
     cy.get("#spinner_gone").should(
       "have.text",
       "Thank God that spinner is gone!"
