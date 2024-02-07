@@ -7,13 +7,15 @@ export default defineConfig({
           // implement node event listeners here
         },
         env:{
-            stage:'https://stage.pasv.us/course',
-            prod:'https://coding.pasv.us/course',
+            stage:'https://stage.pasv.us/user/login',
+            prod:'https://stage.pasv.us/course',
             test: 'Hello World!',
             base:'http://uitestingplayground.com/home',
             homeWork: 'https://play1.automationcamp.ir/expected_conditions.html',
-            demoQA: 'https://demoqa.com'
+            demoQA: 'https://demoqa.com',
+            herokuapp: 'https://the-internet.herokuapp.com'
         }
     },
-    defaultCommandTimeout:17000,
+
+    defaultCommandTimeout:16000,
 });

@@ -2,6 +2,9 @@ import "cypress-iframe";
 
 describe("HOMEWORK", () => {
   beforeEach(() => {
+    cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
+  });
+  beforeEach(() => {
     cy.visit(Cypress.env("homeWork"));
   });
   it.only("alert", (done) => {
@@ -10,7 +13,7 @@ describe("HOMEWORK", () => {
       done();
     });
     cy.get("#alert_trigger").click();
-//    cy.get("#alert_handled_badge").should("have.text", "Alert \n                                handled");
+    //    cy.get("#alert_handled_badge").should("have.text", "Alert \n                                handled");
     cy.get("#alert_handled_badge").should("include.text", "handled");
   });
   it("confirm OK", (done) => {
@@ -32,7 +35,7 @@ describe("HOMEWORK", () => {
   });
   it("Wait for element to be visible", () => {
     cy.get(".popover-header").should("not.exist");
-    cy.get("#visibility_trigger").contains("button", "Trigger").click();
+    cy.get("#visibility_trigger").click();
     cy.get("#visibility_target")
       .should("have.text", "Click Me")
       .and("be.visible")

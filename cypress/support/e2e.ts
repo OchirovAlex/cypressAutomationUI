@@ -25,4 +25,4 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 // require('./commands')
 
 import './commands';
-
+import "cypress-real-events";

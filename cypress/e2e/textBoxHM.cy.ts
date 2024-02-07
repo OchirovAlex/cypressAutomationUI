@@ -4,6 +4,9 @@ describe("textBox", () => {
   beforeEach(() => {
     cy.visit(`${Cypress.env("demoQA")}/text-box`);
   });
+  beforeEach(() => {
+    cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
+  });
   it("submit", () => {
     cy.get("#userName").type("Jerry Smith");
     cy.get("#userEmail").type("example@gmail.com");
