@@ -25,27 +25,18 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      login(email: string, password: string): Chainable<void>
+      
+    }
+  }
+}
+Cypress.Commands.add('login',(userName:string, password:string)=>{
+    cy.get("#userName").type(userName);
+    cy.get("#password").type(password);
+    cy.contains("button", "Login").click();
+});
 
-// Cypress.Commands.add('iframe', { prevSubject: 'element' }, ($iframe, selector) => {
-//     Cypress.log({
-//       name: 'iframe',
-//       consoleProps() {
-//         return {
-//           iframe: $iframe,
-//         };
-//       },
-//     });
-//     return new Cypress.Promise(resolve => {
-//       resolve($iframe.contents().find(selector));
-//     });
-//   });
+Cypress.Commands.add()

@@ -1,4 +1,4 @@
-import { TextBox } from "../../pages/TextBox";
+import { TextBox } from "../../pages/HomeWork/TextBox";
 
 describe("textBox", () => {
   beforeEach(() => {
