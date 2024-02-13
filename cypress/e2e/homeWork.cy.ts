@@ -7,7 +7,7 @@ describe("HOMEWORK", () => {
   beforeEach(() => {
     cy.visit(Cypress.env("homeWork"));
   });
-  it.only("alert", (done) => {
+  it("alert", (done) => {
     cy.on("window:alert", (text) => {
       expect(text).to.eq("I am alerting you!");
       done();

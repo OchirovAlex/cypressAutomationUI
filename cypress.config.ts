@@ -11,7 +11,7 @@ export default defineConfig({
             prod:'https://stage.pasv.us/course',
             test: 'Hello World!',
             base:'http://uitestingplayground.com/home',
-            homeWork: 'https://play1.automationcamp.ir/expected_conditions.html',
+            homeWork: 'https://play1.automationcamp.ir',
             demoQA: 'https://demoqa.com',
             herokuapp: 'https://the-internet.herokuapp.com'
         }

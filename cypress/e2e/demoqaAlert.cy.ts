@@ -1,4 +1,4 @@
-import {Alert} from '../../pages/DemoQAAlerts';
+import {Alert} from '../../pages/HomeWork/DemoQAAlerts';
 describe('DEMOQAALERT', () => {
     beforeEach(() => {
         cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
