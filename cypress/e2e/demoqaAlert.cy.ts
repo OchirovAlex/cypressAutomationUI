@@ -4,7 +4,7 @@ describe('DEMOQAALERT', () => {
         cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
     });
     beforeEach(() => {
-        cy.visit(`${Cypress.env("demoQA")}/alerts`);
+        Alert.visit();
     });
     it('Click Button to see alert', () => {
         Alert.alert();

@@ -12,6 +12,9 @@ class DemoQAAlert{
     private promptResult:string = '#promptResult';
     private promptResultText:string = 'You entered '
 
+    visit(){
+        cy.visit(`${Cypress.env("demoQA")}/alerts`);
+    }
     alert(){
         cy.on('window:alert',(text)=>{
             expect(text).to.eq(this.alertText);

@@ -6,7 +6,7 @@ describe('IFRAME', () => {
     it('just iframe', () => {
         IframePlayG.getIframe();
     });
-    it.only('iframe with plugin',()=>{
+    it('iframe with plugin',()=>{
         IframePlayG.getIframePlugin();
     })
 });

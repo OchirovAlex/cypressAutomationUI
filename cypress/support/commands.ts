@@ -38,5 +38,3 @@ Cypress.Commands.add('login',(userName:string, password:string)=>{
     cy.get("#password").type(password);
     cy.contains("button", "Login").click();
 });
-
-Cypress.Commands.add()
