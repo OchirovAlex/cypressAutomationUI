@@ -16,7 +16,8 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 import "cypress-real-events";
-import 'cypress-iframe'
+import 'cypress-iframe';
+import 'cypress-mochawesome-reporter/register';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
@@ -24,7 +25,6 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
   })
   
-  import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
