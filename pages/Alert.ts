@@ -45,7 +45,6 @@ class Alert{
         cy.window().then((win)=>{
             cy.stub(win,'prompt').returns(null);
             cy.get(this.promptBtn).click();
-            //cy.realType('{esc}');
             cy.get(this.result).should('have.text',this.promptResultText+null);
         })
     }

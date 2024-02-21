@@ -16,7 +16,7 @@ describe('ALERT', () => {
     it('Click for JS Prompt',()=>{
         AlertPage.promptHello();
     })
-    it.only('Click for JS Prompt/Null',()=>{
+    it('Click for JS Prompt/Null',()=>{
         //AlertPage.promptNull();
         cy.window().then((win)=>{
             //cy.stub(win,'prompt').returns(null);

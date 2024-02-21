@@ -7,6 +7,7 @@ class LocalCodingLogin {
         cy.get(this.email).type(email);
         cy.get(this.password).type(password, {log: false});
         cy.get(this.button).click();
+        
     }
 } 
 

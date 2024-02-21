@@ -17,13 +17,15 @@ export default defineConfig({
       require("cypress-mochawesome-reporter/plugin")(on);
     },
     env: {
-      stage: "https://stage.pasv.us/user/login",
+      stage: "https://stage.pasv.us",
       prod: "https://stage.pasv.us/course",
       test: "Hello World!",
       base: "http://uitestingplayground.com/home",
       homeWork: "https://play1.automationcamp.ir",
       demoQA: "https://demoqa.com",
       herokuapp: "https://the-internet.herokuapp.com",
+      email: "kvazipops@mail.ru",
+      password: "qwerty1234"
     },
   },
 
