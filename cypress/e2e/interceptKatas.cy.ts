@@ -14,6 +14,7 @@ describe('HOMEWORK INTERCEPT', () => {
         cy.get('div').contains('Katas').click();
         //cy.visit(`${Cypress.env('stage')}/profile/${this.userId}/katas`);
         cy.wait('@katas').then(res=>{
+            console.log(res.response.body);
             cy.wrap(this.data).should('deep.equal',res.response.body);
             cy.location().should(loc=>{
                 expect(loc.href).to.eq(`https://stage.pasv.us/profile/${this.userId}/katas`);

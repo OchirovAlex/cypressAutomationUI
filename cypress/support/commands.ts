@@ -8,6 +8,8 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
+import 'cypress-iframe';
+
 //
 //
 // -- This is a parent command --

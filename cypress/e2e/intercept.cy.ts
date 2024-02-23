@@ -2,7 +2,19 @@ describe('INTERCEPT', () => {
     it('network request spy', function(){
         cy.fixture("progress.json").as('data')
         cy.intercept('POST','*/login').as('login');
-        cy.intercept('https://server-stage.pasv.us/course/coursesProgress/65d423b6db75721937e524ad',{fixture: "progress.json"}).as('course');
+        cy.intercept(
+            {
+                method: 'GET',
+                url: 'https://server-stage.pasv.us/course/coursesProgress/5fb95c1f360c14003c7ab541',
+            },
+            (req) => {
+                req.continue((res) => {
+                    if (res.statusCode === 200) {
+                        throw new Error('ERROR 200');
+                    }
+                });
+            }
+        ).as('course');
         cy.visit(`${Cypress.env('stage')}/user/login`);
         cy.get('#normal_login_email').type(Cypress.env('email'));
         cy.get('#normal_login_password').type(Cypress.env('password'),{log: false});
