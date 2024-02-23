@@ -1,4 +1,9 @@
 import { defineConfig } from "cypress";
+
+const xlsx = require("node-xlsx").default;
+const fs = require("fs"); // for file
+const path = require("path")
+
 export default defineConfig({
   reporter: "cypress-mochawesome-reporter",
   video: true,
@@ -15,6 +20,20 @@ export default defineConfig({
     baseUrl: "https://uitestingplayground.com",
     setupNodeEvents(on, config) {
       require("cypress-mochawesome-reporter/plugin")(on);
+
+      //reading excel document from fixture
+      on("task", {
+        parseXlsx({ filePath }) {
+          return new Promise((resolve, reject) => {
+            try {
+              const jsonData = xlsx.parse(fs.readFileSync(filePath));
+              resolve(jsonData);
+            } catch (e) {
+              reject(e);
+            }
+          });
+        },
+      });
     },
     env: {
       stage: "https://stage.pasv.us",
