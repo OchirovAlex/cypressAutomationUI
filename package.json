@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "open": "cypress open --e2e --browser chrome",
-    "cypress-run": "cypress run --browser chrome --spec cypress/e2e/.cy.ts"
+    "cypress-run": "cypress run --browser chrome --spec cypress/e2e/autoFill.cy.ts",
+    "cypressTest": "cypress run --browser chrome --spec cypress/e2e/**"
   },
   "author": "Alex",
   "license": "ISC",

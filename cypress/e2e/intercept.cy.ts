@@ -28,7 +28,7 @@ describe('INTERCEPT', () => {
                 expect(res.response.statusCode).to.eq(200);
             })
         })
-        cy.visit('https://stage.pasv.us/profile/65d423b6db75721937e524ad/progress');
+        cy.visit(`https://stage.pasv.us/profile/${this.id}/progress`);
         cy.wait('@course').then(res=>{
             cy.wrap(this.data).should('deep.equal',res.response.body)
             cy.location().should(loc=>{
