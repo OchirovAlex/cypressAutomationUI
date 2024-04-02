@@ -12,7 +12,6 @@ describe('HOMEWORK INTERCEPT', () => {
             cy.wrap(id).as('userId');
         });
         cy.get('div').contains('Katas').click();
-        //cy.visit(`${Cypress.env('stage')}/profile/${this.userId}/katas`);
         cy.wait('@katas').then(res=>{
             console.log(res.response.body);
             cy.wrap(this.data).should('deep.equal',res.response.body);
