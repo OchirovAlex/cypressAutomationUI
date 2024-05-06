@@ -1,4 +1,4 @@
-import {IframePlayG} from '../../pages/HomeWork/IframePG'
+import {IframePlayG} from '../../pages/qwerty/IframePG'
 describe('IFRAME', () => {
     beforeEach(() => {
         IframePlayG.visit();
